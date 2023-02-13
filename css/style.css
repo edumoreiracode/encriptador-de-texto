@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
+/* :root {
+  --desencriptar-color: hotpink;
+} */
+
 * { 
   margin: 0;
   padding: 0;
@@ -11,7 +15,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: #F3F5FC;
   min-height: 100vh;
   max-width: 1440px;
   margin: auto;
@@ -20,12 +23,21 @@ body {
 /* Aqui comienza el css del header */
 
 header {
-  /* padding: 20px 0; */
+  display: flex;
+  align-items: center;
   height: 10vh;
+  background-color: #f3fcf7;
 }
 
 header img {
-  width: 80px;
+  height: 60%;
+}
+
+header h1 {
+  border-left: 2px solid #272727;
+  padding: 0 0 0 10px ;
+  color: #009846;
+  font-size: large;
 }
 
 
@@ -37,7 +49,7 @@ main {
   justify-content: space-around;
   align-items: center;
   height: 80vh;
-  background-color: chocolate;
+  background-color: #76ee94;
 }
 
 /* Css del .input-container */
@@ -49,7 +61,6 @@ main {
   align-items: center;
   width: 60%;
   height: 100%;
-  background-color: rgb(206, 203, 49);
   padding: 20px 0;
 }
 
@@ -59,8 +70,15 @@ main {
   resize: none;
   border: none;
   outline: none;
+  background-color: transparent;
   padding: 20px;
   border-radius: 10px;
+  font-size: 24px;
+  color: #009846;
+}
+
+.text-area-input::placeholder {
+  color: rgba(0, 152, 71, 0.5);
 }
 
 .input-container p {
@@ -68,6 +86,7 @@ main {
   font-size: x-small;
   margin: 10px 10px;
   text-align: center;
+  color: #009846;
 }
 
 .buttons-container {
@@ -83,21 +102,34 @@ main {
   padding: 10px 20px;
   border-radius: 24px;
   border: none;
-  background-color: rgb(219, 218, 122);
-  box-shadow: 0px 0px 5px  rgba(0, 0, 0, 0.384);
+  background-color: #009846;
+  /* box-shadow: 0px 0px 5px  rgba(0, 0, 0, 0.384); */
+  /* border: #438a55 solid 3px; */
+  box-shadow: none;
   cursor: pointer;
   transition: 0.1s;
+  color: #F3F5FC;
 }
 
 .buttons-container button:hover {
-  background-color: rgb(196, 194, 111);
+  /* background-color: rgba(243, 245, 252, 0.5); */
+    /* background-color: #249c5a; */
+    /* background-color: #76ee94; */
+    /* color: #009846;
+    border: #009846 solid 1px; */
+    box-shadow: 0px 3px 5px  rgba(0, 0, 0, 0.384);
+    
 }
 
 .buttons-container button:active {
   transform: scale(1.1);
-  background-color: rgb(219, 218, 122);
+  /* background-color: #20884f; */
 }
 
+.buttons-container .desencriptar-button {
+  background-color: #f3fcf7;
+  color: #009846;
+}
 
 /* Css del .output-container */
 
@@ -108,7 +140,8 @@ main {
   justify-content: center;
   width: 30%;
   height: 95%;
-  background-color: blueviolet;
+  background-color: #f3fcf7;
+  color: #009846;
   padding: 20px 0;
   border-radius: 20px;
   box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
@@ -120,29 +153,44 @@ main {
 }
 
 .output-container-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   text-align: center;
   margin: 10px 10px;
+  font-weight: bold;
+  font-size: larger;
 }
 
-.output-container-text:last-child {
-  font-weight: bold;
+.output-container-second-text {
+  font-weight: normal;
   font-size: small;
+  margin-top: 5px;
 }
 
 
 /* Aqui comienza el css del footer */
 
 footer {
-  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
   text-align: center;
   font-size: small;
+  color: #f3fcf7;
+  background-color: #009846;
 }
 
 /* Aqui comienza el css de las media queries */
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 920px) {
   header {
-    height: 5vh;
+    height:7vh;
+  }
+  main {
+    height: 86vh;
   }
   .input-container {
     width: 100%;
@@ -155,6 +203,9 @@ footer {
   .output-container img {
     display: none;
   }
+  footer {
+    height: 7vh;
+  }
 }
 
 @media screen and (max-width: 640px) {
@@ -166,7 +217,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 420px) {
   /* .buttons-container {
     width: 80%;
   } */
