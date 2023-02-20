@@ -4,38 +4,41 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="css/style.css">
   <title>Document</title>
 </head>
 <body>
   <header>
     <img src="./img/Logo.png" alt="">
-    <h1>Encriptador de texto Alura ONE</h1>
+    <h1>Encriptador de texto</h1>
   </header>
 
   <main>
     <div class="input-container">
-      <textarea name="" id="" cols="30" rows="10" class="text-area-input" placeholder="Ingrese el texto aqui" ></textarea>
+      <textarea name="" cols="30" rows="10" class="text-area-input" placeholder="Ingrese el texto aqui" ></textarea>
       <p><span>	
         &#9888;</span> Solo letras minúsculas y sin acentos</p>
       <div class="buttons-container">
-        <button>Encriptar</button>
-        <button class="desencriptar-button">Desencriptar</button>
+        <button onclick="encriptarBtn()">Encriptar</button>
+        <button onclick="desencriptarBtn()" class="desencriptar-button">Desencriptar</button>
       </div>
     </div>
 
     <div class="output-container">
-      <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
-      <img src="./img/img-busqueda.png" alt="">
+      <textarea name="" cols="30" rows="10" class="text-area-output"></textarea>
+      <img src="./img/img-busqueda.png" alt="" class="output-img">
       <div class="output-container-text">
         <p>Ningún mensaje fue encontrado</p>
         <p class="output-container-second-text">Ingresa el texto que desees encriptar o desencriptar.</p>
       </div>
+      <button onclick="copiarBtn()" class="copiar-button">Copiar</button>
     </div>
   </main>
 
   <footer>
     <p>Desarrollado por Eduardo Moreira</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
