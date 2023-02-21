@@ -108,8 +108,9 @@ textarea {
   font-size: 18px;
 }
 
-.buttons-container button:hover {
-  box-shadow: 0px 3px 5px  rgba(0, 0, 0, 0.384);
+.buttons-container button:hover,
+.copiar-button:hover {
+  box-shadow: 3px 3px 5px  rgba(0, 0, 0, 0.384);
 }
 
 .buttons-container button:active {
@@ -134,7 +135,7 @@ textarea {
   color: #2A5C58;
   padding: 20px 0;
   border-radius: 20px;
-  box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+  box-shadow: 3px 3px 5px  rgba(0, 0, 0, 0.384);
 }
 
 .text-area-output {
@@ -173,6 +174,8 @@ textarea {
   margin: 0;
   padding: 5px 20px;
   font-size: 16px;
+  background-color: #2A5C58;
+  transition: 0.5s;
 }
 
 /* Aqui comienza el css del footer */

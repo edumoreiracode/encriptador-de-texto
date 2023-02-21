@@ -2,6 +2,7 @@ const entrada = document.querySelector(".text-area-input");
 const salida = document.querySelector(".text-area-output");
 const imgSalida = document.querySelector(".output-img");
 const textSalida = document.querySelector(".output-container-text");
+const copiarBtn = document.querySelector(".copiar-button");
 
 function textoValido(texto) {
   // Utilizare esta expresión regular para verificar si el string está vacío.
@@ -30,6 +31,7 @@ function encriptarBtn() {
     textSalida.style.display = "none";
     salida.style.display = "inline-block";
     salida.value = textoEncriptado;
+    copiarBtn.style.display = "initial";
   }
 }
 
@@ -51,6 +53,14 @@ function encriptar(texto) {
 
 // }
 
-// function copiar() {
+function copiar() {
 
-// }
+  salida.select();
+  // document.execCommand("copy");
+  if(document.execCommand("copy")) {
+    copiarBtn.style.backgroundColor = "#4da864";
+    copiarBtn.textContent = "Copiado ✓";
+    setTimeout(() => {copiarBtn.style.backgroundColor = "#2A5C58"; copiarBtn.textContent = "Copiar";}, 2000);
+    salida.blur();
+  }
+}
