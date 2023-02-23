@@ -36,7 +36,36 @@ function encriptarBtn() {
 }
 
 function encriptar(texto) {
-  const matrizCodigo = [["a", "ai"], ["e", "enter"], ["i", "imes"], ["o", "ober"], ["u", "ufat"]];
+  const matrizCodigo = [["e", "enter"], ["i", "imes"], ["a", "ai"], ["o", "ober"], ["u", "ufat"]];
+
+  texto = texto.toLowerCase();
+
+  for(let i = 0; i < matrizCodigo.length; i++){
+    if(texto.includes(matrizCodigo[i][0])){
+      console.log(matrizCodigo[i][0]);
+      texto = texto.replaceAll(matrizCodigo[i][0], matrizCodigo[i][1]);
+    }
+  }
+  
+  return texto;
+}
+
+function desencriptarBtn() {
+  let texto = salida.value;
+
+  if(textoValido(texto)) {
+    let textoDesencriptado = desencriptar(texto);
+    
+    imgSalida.style.display = "none";
+    textSalida.style.display = "none";
+    salida.style.display = "inline-block";
+    salida.value = textoDesencriptado;
+    copiarBtn.style.display = "initial";
+  }
+}
+
+function desencriptar(texto) {
+  const matrizCodigo = [["ai", "a"], ["enter", "e"], ["imes", "i"], ["ober", "o"], ["ufat", "u"]];
 
   texto = texto.toLowerCase();
 
@@ -49,14 +78,10 @@ function encriptar(texto) {
   return texto;
 }
 
-// function desencriptar(textoEncriptado) {
-
-// }
-
 function copiar() {
-
+  // Selecciono el texto a copiar
   salida.select();
-  // document.execCommand("copy");
+  // Si fue copiado correctamente modifico el boton por un momento
   if(document.execCommand("copy")) {
     copiarBtn.style.backgroundColor = "#4da864";
     copiarBtn.textContent = "Copiado ✓";
