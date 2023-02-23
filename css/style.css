@@ -25,12 +25,14 @@ header {
   background-color: #ABE1DE;
 }
 
-header img {
-  height: 60%;
+header a {
+  font-size: 24px;
+  margin-left: 20px;
+  color: #2A5C58;
 }
 
 header h1 {
-  border-left: 2px solid #2A5C58;
+  /* border-left: 2px solid #2A5C58; */
   padding: 0 0 0 10px ;
   color: #2A5C58;
   font-size: large;
@@ -182,13 +184,33 @@ textarea {
 
 footer {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 10vh;
-  text-align: center;
-  font-size: small;
-  color: #2A5C58;
   background-color: #ABE1DE;
+  font-size: 24px;
+}
+
+footer svg {
+  color: #2A5C58;
+  transition: 0.2s;
+  text-align: center;
+}
+
+footer svg:hover {
+  transform: scale(1.2);
+}
+
+footer svg:active {
+  transform: scale(1);
+}
+
+footer p {
+  color: #2A5C58;
+  font-size: small;
+  text-align: center;
+
 }
 
 /* Aqui comienza el css de las media queries */
